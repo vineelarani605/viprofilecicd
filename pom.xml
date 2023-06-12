@@ -165,8 +165,9 @@
     </build>
 	<repositories>
     <repository>
-      <id>${NEXUS-GRP-REPO}</id>
-      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
+      <id>visualpath</id>
+      <url> http://13.212.118.188:8081/repository/visualpathsnapshot/</url>
+	    
     </repository>
   </repositories>
 </project>
