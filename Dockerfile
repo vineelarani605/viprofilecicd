@@ -1,8 +1,8 @@
-# Use a base image with Java and Tomcat pre-installed
-FROM tomcat:latest
 
-# Copy the WAR file to the Tomcat webapps directory
-COPY viprofilecicd/target/vprofile-v2.war  /usr/local/tomcat/webapps/
+FROM tomcat:9.0-jdk11-openjdk-slim
 
-# Expose the default Tomcat port
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+COPY WebContent /usr/local/tomcat/webapps/ROOT
+
 EXPOSE 8082
