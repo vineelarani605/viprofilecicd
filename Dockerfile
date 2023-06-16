@@ -1,14 +1,8 @@
-# Use a base image
-FROM python:3.9-slim-buster
+# Use a base image with Java and Tomcat pre-installed
+FROM tomcat:latest
 
-# Set the working directory inside the container
-WORKDIR /app
+# Copy the WAR file to the Tomcat webapps directory
+COPY viprofilecicd/target/vprofile-v2.war /usr/local/tomcat/webapps/
 
-# Copy the project files to the working directory
-COPY . .
-
-# Expose any necessary ports
-EXPOSE 8002
-
-# Set the command to run your application
-CMD ["python", "app.py"]
+# Expose the default Tomcat port
+EXPOSE 8080
